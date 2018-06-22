@@ -1,11 +1,15 @@
 
-### 自定义View 基础
+# 自定义View 基础
 
 
-# 一.安卓中的坐标系
-## 1.屏幕坐标系和数学坐标系的区别
-由于移动设备一般定义屏幕左上角为坐标原点，向右为x轴增大方向，向下为y轴增大方向，
-所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的，详情如下：
+## 一.安卓中的坐标系
+### 1.屏幕坐标系和数学坐标系的区别
+
+移动设备左上为原点,X轴向右增大,Y轴向下增大.
+
+数学坐标系左下为原点,X轴向右增大,Y轴向上增大.
+
+详情如下：
 
 （**PS：其中的∠a 是对应的，注意y轴方向！**）
 
@@ -18,7 +22,7 @@
 
 ![](http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg)
 
-## 2.View的坐标系
+### 2.View的坐标系
 
 **注意：View的坐标系统是相对于父控件而言的.**
 
@@ -33,7 +37,7 @@
 
 ![](http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg)
 
-## 3.MotionEvent中 get 和 getRaw 的区别
+### 3.MotionEvent中 get 和 getRaw 的区别
 
 ```
     event.getX();       //触摸点相对于其所在组件坐标系的坐标
@@ -51,12 +55,12 @@
 ![](http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg)
 
 
-# 二 角度与弧度
+## 二 角度与弧度
 
 安卓中角度(angle)与弧度(radian)的有关问题。
 
 
-## 1.角度与弧度的定义
+### 1.角度与弧度的定义
 
 角度和弧度一样都是描述角的一种度量单位，下面是它们的定义：
 
@@ -68,10 +72,11 @@
 **如图:**
 
 ![](http://ww1.sinaimg.cn/large/005Xtdi2jw1f1s0f975hmj308c0dwmxh.jpg)
+
 ![](http://ww3.sinaimg.cn/large/005Xtdi2jw1f1s0g3rcg2j308c0dw3yw.jpg)
 
 
-## 2.角度和弧度的换算关系
+### 2.角度和弧度的换算关系
 **圆一周对应的角度为360度(角度)，对应的弧度为2π弧度。**
 
 **故得等价关系:360(角度) = 2π(弧度) ==> 180(角度) = π(弧度)**
@@ -92,7 +97,7 @@
 ![](http://ww3.sinaimg.cn/large/005Xtdi2jw1f4hui2jaecj305m03lwee.jpg)
 
 
-## 3.一些细节问题
+### 3.一些细节问题
 
 由于默认屏幕坐标系和常见数学坐标系的小差别([坐标系问题点这里](https://github.com/GcsSloop/AndroidNote/blob/master/CustomView/Base/%5B1%5DCoordinateSystem.md))，所以在角上必然也会存在一些区别，例如：
 
@@ -103,7 +108,7 @@
 ![](http://ww3.sinaimg.cn/large/005Xtdi2jw1f1s2wnsewfj308c0dwt94.jpg)
 
 
-# 三 颜色
+## 三 颜色
 
 ### 作者微博: [@GcsSloop](http://weibo.com/GcsSloop)
 
@@ -111,7 +116,7 @@
 
 简要介绍安卓中的颜色相关内容，包括颜色的定义，创建颜色的几种方式，以及颜色的混合模式等。
 
-## 1.简单介绍颜色
+### 1.简单介绍颜色
 
 安卓支持的颜色模式：
 
@@ -143,7 +148,7 @@ RGB 从0x00到0xff表示颜色从浅到深。
 
 **当RGB全取最小值(0或0x000000)时颜色为黑色，全取最大值(255或0xffffff)时颜色为白色**
 
-## 2.几种创建或使用颜色的方式
+### 2.几种创建或使用颜色的方式
 
 ### 1.java中定义颜色
 
@@ -159,7 +164,7 @@ RGB 从0x00到0xff表示颜色从浅到深。
   int color = 0xaaff0000;                   //带有透明度的红色
 ```
 
-### 2.在xml文件中定义颜色
+#### 2.在xml文件中定义颜色
 
 在/res/values/color.xml 文件中如下定义：
 
@@ -274,4 +279,5 @@ XOR      | [Sa + Da - 2 * Sa * Da, Sc * (1 - Da) + (1 - Sa) * Dc]
 ## 四.参考资料
 
 [Android 屏幕（View）坐标系统](http://blog.csdn.net/wangjinyu501/article/details/21827341)
+
 [【安卓图形动画】](http://www.cnblogs.com/zhucai/p/android-graphics-animation.html)
